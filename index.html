@@ -271,12 +271,7 @@
 </ul>
 <h1 id='authentication'>Authentication</h1>
 <ul>
-<li><p>API Key (MetapairKeyAuth)</p>
-
-<ul>
-<li>Parameter Name: <strong>x-metapair-token</strong>, in: header.</li>
-</ul></li>
-<li><p>API Key (PartneroidKeyAuth)</p>
+<li>API Key (PartneroidKeyAuth)
 
 <ul>
 <li>Parameter Name: <strong>x-partneroid-token</strong>, in: header.</li>
@@ -291,33 +286,31 @@
 <pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
 curl -X GET https://api.partneroid.com/v1/competitors?url<span class="o">=</span>string <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'x-metapair-token: API_KEY'</span>
+  -H <span class="s1">'x-partneroid-token: API_KEY'</span>
 
 </code></pre><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.partneroid.com/v1/competitors?url=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.partneroid.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
-
+  <span class="na">Accept</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="s2">"x-partneroid-token"</span><span class="p">:</span> <span class="s2">"API_KEY"</span>
 <span class="p">};</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.partneroid.com/v1/competitors'</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
-  <span class="na">data</span><span class="p">:</span> <span class="s1">'?url=string'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.partneroid.com/v1/competitors"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="s2">"?url=string"</span><span class="p">,</span>
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
   <span class="p">}</span>
-<span class="p">})</span>
-
+<span class="p">});</span>
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
+  <span class="s1">'x-partneroid-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
 
 <span class="p">};</span>
 
@@ -338,7 +331,7 @@ curl -X GET https://api.partneroid.com/v1/competitors?url<span class="o">=</span
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+  <span class="s1">'x-partneroid-token'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.partneroid.com/v1/competitors'</span><span class="p">,</span>
@@ -351,7 +344,7 @@ curl -X GET https://api.partneroid.com/v1/competitors?url<span class="o">=</span
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
-  <span class="s">'x-metapair-token'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+  <span class="s">'x-partneroid-token'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.partneroid.com/v1/competitors'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -433,9 +426,7 @@ curl -X GET https://api.partneroid.com/v1/competitors?url<span class="o">=</span
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"string"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
       </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -636,21 +627,19 @@ curl -X GET https://api.partneroid.com/v1/brands <span class="se">\</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
-
+  <span class="na">Accept</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="s2">"x-metapair-token"</span><span class="p">:</span> <span class="s2">"API_KEY"</span>
 <span class="p">};</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.partneroid.com/v1/brands'</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.partneroid.com/v1/brands"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
 
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
   <span class="p">}</span>
-<span class="p">})</span>
-
+<span class="p">});</span>
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -777,9 +766,7 @@ curl -X GET https://api.partneroid.com/v1/brands <span class="se">\</span>
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"string"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
       </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
@@ -978,20 +965,18 @@ curl -X GET https://api.partneroid.com/v1/brands/<span class="o">{</span>id<span
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.partneroid.com</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
-
+  <span class="s2">"x-metapair-token"</span><span class="p">:</span> <span class="s2">"API_KEY"</span>
 <span class="p">};</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.partneroid.com/v1/brands/{id}'</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.partneroid.com/v1/brands/{id}"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
 
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
   <span class="p">}</span>
-<span class="p">})</span>
-
+<span class="p">});</span>
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1116,8 +1101,7 @@ curl -X GET https://api.partneroid.com/v1/brands/<span class="o">{</span>id<span
 </tbody></table>
 
 <aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-MetapairKeyAuth, PartneroidKeyAuth
+To perform this operation, you must be authenticated by means of one of the following methods: PartneroidKeyAuth
 </aside>
 <h2 id='get__countries'>get__countries</h2>
 <blockquote>
@@ -1126,33 +1110,31 @@ MetapairKeyAuth, PartneroidKeyAuth
 <pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
 curl -X GET https://api.partneroid.com/v1/countries <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'x-metapair-token: API_KEY'</span>
+  -H <span class="s1">'x-partneroid-token: API_KEY'</span>
 
 </code></pre><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">https://api.partneroid.com/v1/countries</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">api.partneroid.com</span>
 <span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
 
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
-
+  <span class="na">Accept</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="s2">"x-partneroid-token"</span><span class="p">:</span> <span class="s2">"API_KEY"</span>
 <span class="p">};</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'https://api.partneroid.com/v1/countries'</span><span class="p">,</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">"https://api.partneroid.com/v1/countries"</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"get"</span><span class="p">,</span>
 
   <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
   <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
   <span class="p">}</span>
-<span class="p">})</span>
-
+<span class="p">});</span>
 </code></pre><pre class="highlight javascript tab-javascript--nodejs"><code><span class="kr">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'node-fetch'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Accept'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
+  <span class="s1">'x-partneroid-token'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
 
 <span class="p">};</span>
 
@@ -1173,7 +1155,7 @@ curl -X GET https://api.partneroid.com/v1/countries <span class="se">\</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
-  <span class="s1">'x-metapair-token'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+  <span class="s1">'x-partneroid-token'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
 <span class="p">}</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.partneroid.com/v1/countries'</span><span class="p">,</span>
@@ -1185,7 +1167,7 @@ curl -X GET https://api.partneroid.com/v1/countries <span class="se">\</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
-  <span class="s">'x-metapair-token'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+  <span class="s">'x-partneroid-token'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.partneroid.com/v1/countries'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -1219,7 +1201,7 @@ curl -X GET https://api.partneroid.com/v1/countries <span class="se">\</span>
 
     </span><span class="n">headers</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span><span class="x">
         </span><span class="s">"Accept"</span><span class="o">:</span><span class="x"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json"</span><span class="p">},</span><span class="x">
-        </span><span class="s">"x-metapair-token"</span><span class="o">:</span><span class="x"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span><span class="x">
+        </span><span class="s">"x-partneroid-token"</span><span class="o">:</span><span class="x"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span><span class="x">
 
     </span><span class="p">}</span><span class="x">
 
@@ -1347,7 +1329,7 @@ curl -X GET https://api.partneroid.com/v1/countries <span class="se">\</span>
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
-MetapairKeyAuth, PartneroidKeyAuth
+partneroidKeyAuth, PartneroidKeyAuth
 </aside>
 
       </div>
