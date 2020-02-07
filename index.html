@@ -454,6 +454,20 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
           </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -534,7 +548,7 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <tr>
 <td>»»» name</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>none</td>
 <td>Partner name</td>
 </tr>
@@ -543,7 +557,7 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <td>[object]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Brand categories</td>
 </tr>
 <tr>
 <td>»»»» name</td>
@@ -603,7 +617,7 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <tr>
 <td>»»»»» name</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>none</td>
 <td>Partner name</td>
 </tr>
@@ -612,7 +626,7 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <td>[object]</td>
 <td>false</td>
 <td>none</td>
-<td>none</td>
+<td>Brand categories</td>
 </tr>
 <tr>
 <td>»»»»»» name</td>
@@ -641,6 +655,33 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <td>false</td>
 <td>none</td>
 <td>Image URI</td>
+</tr>
+</tbody></table>
+
+<p><em>xor</em></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»»»»» <em>anonymous</em></td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»»»» description</td>
+<td>any</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
