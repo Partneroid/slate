@@ -235,7 +235,7 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#partneroid-public-api-default" class="toc-h1 toc-link" data-title="Default">Default</a>
+            <a href="#partneroid-public-api-default" class="toc-h1 toc-link" data-title="API's">API's</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get__partnerships" class="toc-h2 toc-link" data-title="get__partnerships">get__partnerships</a>
@@ -280,7 +280,7 @@
 </ul></li>
 </ul>
 
-<h1 id="partneroid-public-api-default">Default</h1>
+<h1 id="partneroid-public-api-default">API's</h1>
 <h2 id='get__partnerships'>get__partnerships</h2>
 <blockquote>
 <p>Code samples</p>
@@ -440,34 +440,6 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
           </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -513,168 +485,59 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 </thead><tbody>
 <tr>
 <td>» brands</td>
-<td>[oneOf]</td>
+<td>[object]</td>
 <td>true</td>
 <td>none</td>
 <td>Partnerships data</td>
 </tr>
-</tbody></table>
-
-<p><em>oneOf</em></p>
-
-<table><thead>
 <tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>»» <em>anonymous</em></td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Partnership Information</td>
-</tr>
-<tr>
-<td>»»» url</td>
+<td>»» url</td>
 <td>string(uri)\</td>
 <td>null</td>
 <td>false</td>
 <td>none</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Partner name</td>
+</tr>
+<tr>
+<td>»» categories</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+<td>Brand categories</td>
 </tr>
 <tr>
 <td>»»» name</td>
 <td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Partner name</td>
-</tr>
-<tr>
-<td>»»» categories</td>
-<td>[object]</td>
-<td>false</td>
-<td>none</td>
-<td>Brand categories</td>
-</tr>
-<tr>
-<td>»»»» name</td>
-<td>string</td>
 <td>true</td>
 <td>none</td>
 <td>none</td>
 </tr>
 <tr>
-<td>»»» image</td>
+<td>»» image</td>
 <td>object</td>
 <td>false</td>
 <td>none</td>
 <td>Partner logo</td>
 </tr>
 <tr>
-<td>»»»» inline</td>
+<td>»»» inline</td>
 <td>object</td>
 <td>false</td>
 <td>none</td>
 <td>Image in base64 format</td>
 </tr>
 <tr>
-<td>»»»»» uri</td>
+<td>»»»» uri</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
 <td>Image URI</td>
-</tr>
-</tbody></table>
-
-<p><em>xor</em></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>»»»» <em>anonymous</em></td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Partnership Information</td>
-</tr>
-<tr>
-<td>»»»»» url</td>
-<td>string(uri)\</td>
-<td>null</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»»»» name</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Partner name</td>
-</tr>
-<tr>
-<td>»»»»» categories</td>
-<td>[object]</td>
-<td>false</td>
-<td>none</td>
-<td>Brand categories</td>
-</tr>
-<tr>
-<td>»»»»»» name</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»»»»» image</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Partner logo</td>
-</tr>
-<tr>
-<td>»»»»»» inline</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>Image in base64 format</td>
-</tr>
-<tr>
-<td>»»»»»»» uri</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Image URI</td>
-</tr>
-</tbody></table>
-
-<p><em>xor</em></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>»»»»»» <em>anonymous</em></td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>Partnership Description</td>
 </tr>
 </tbody></table>
 
