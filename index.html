@@ -426,7 +426,22 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 <p>200 Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"brands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"inline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -484,56 +499,152 @@ curl -X GET https://api.partneroid.com/v1/partnerships?url<span class="o">=</spa
 </tr>
 </thead><tbody>
 <tr>
+<td>» description</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Partnership description</td>
+</tr>
+<tr>
 <td>» brands</td>
-<td>[object]</td>
+<td>[oneOf]</td>
 <td>true</td>
 <td>none</td>
 <td>Partnerships data</td>
 </tr>
+</tbody></table>
+
+<p><em>oneOf</em></p>
+
+<table><thead>
 <tr>
-<td>»» url</td>
-<td>string(uri)\</td>
-<td>null</td>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»» <em>anonymous</em></td>
+<td>object</td>
 <td>false</td>
 <td>none</td>
+<td>Partnership Information</td>
 </tr>
 <tr>
-<td>»» name</td>
+<td>»»» url</td>
+<td>string(uri)</td>
+<td>false</td>
+<td>none</td>
+<td>Partner1 website url</td>
+</tr>
+<tr>
+<td>»»» name</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
-<td>Partner name</td>
+<td>Partner1 name</td>
 </tr>
 <tr>
-<td>»» categories</td>
+<td>»»» categories</td>
 <td>[object]</td>
 <td>false</td>
 <td>none</td>
 <td>Brand categories</td>
 </tr>
 <tr>
-<td>»»» name</td>
+<td>»»»» name</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
 <td>none</td>
 </tr>
 <tr>
-<td>»» image</td>
+<td>»»» image</td>
 <td>object</td>
 <td>false</td>
 <td>none</td>
-<td>Partner logo</td>
+<td>Partner1 logo</td>
 </tr>
 <tr>
-<td>»»» inline</td>
+<td>»»»» inline</td>
 <td>object</td>
 <td>false</td>
 <td>none</td>
 <td>Image in base64 format</td>
 </tr>
 <tr>
-<td>»»»» uri</td>
+<td>»»»»» uri</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Image URI</td>
+</tr>
+</tbody></table>
+
+<p><em>xor</em></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>»»»» <em>anonymous</em></td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>Partnership Information</td>
+</tr>
+<tr>
+<td>»»»»» url</td>
+<td>string(uri)</td>
+<td>false</td>
+<td>none</td>
+<td>Partner2 website url</td>
+</tr>
+<tr>
+<td>»»»»» name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Partner2 name</td>
+</tr>
+<tr>
+<td>»»»»» categories</td>
+<td>[object]</td>
+<td>false</td>
+<td>none</td>
+<td>Brand categories</td>
+</tr>
+<tr>
+<td>»»»»»» name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»»»» image</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>Partner2 logo</td>
+</tr>
+<tr>
+<td>»»»»»» inline</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>Image in base64 format</td>
+</tr>
+<tr>
+<td>»»»»»»» uri</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
