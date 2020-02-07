@@ -31,6 +31,7 @@ under the License.
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title><%= current_page.data.title || "API Documentation" %></title>
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../images/favicon.ico" />
 
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
@@ -42,6 +43,7 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">

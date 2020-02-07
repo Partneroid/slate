@@ -44,7 +44,7 @@ under the License.
         scrollTop:
           $(".highlight.tab-" + language)
             .first()
-            .offset().top - 70
+            .offset().top - 95
       },
       500
     );
